@@ -25,6 +25,7 @@ def execute(filters: StockBalanceFilter | None = None):
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def has_stock_closing_entry_before(from_date: str, company: str | None = None) -> bool:
 	frappe.has_permission("Stock Ledger Entry", "report", throw=True)
 

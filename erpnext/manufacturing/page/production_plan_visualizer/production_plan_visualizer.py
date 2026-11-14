@@ -11,6 +11,7 @@ from erpnext.manufacturing.report.production_plan_summary.production_plan_summar
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_plan_overview(production_plan: str):
 	plan = frappe.get_doc("Production Plan", production_plan)
 	plan.check_permission("read")

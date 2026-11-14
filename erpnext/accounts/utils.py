@@ -1450,6 +1450,7 @@ def get_companies():
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_children(
 	doctype: str, parent: str, company: str, is_root: bool = False, include_disabled: bool = False
 ):
@@ -1492,6 +1493,7 @@ def get_children(
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_account_balances(
 	accounts: str | list,
 	company: str,
@@ -1532,6 +1534,7 @@ def get_account_balances(
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_account_balances_coa(company: str, include_default_fb_balances: bool = False):
 	company_currency = frappe.get_cached_value("Company", company, "default_currency")
 

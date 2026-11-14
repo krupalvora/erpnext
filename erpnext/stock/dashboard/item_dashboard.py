@@ -67,6 +67,7 @@ def make_stock_entry(
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_data(
 	item_code: str | None = None,
 	warehouse: str | None = None,

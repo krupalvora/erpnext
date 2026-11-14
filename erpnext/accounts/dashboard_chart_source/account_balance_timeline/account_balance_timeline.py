@@ -12,6 +12,7 @@ from frappe.utils.nestedset import get_descendants_of
 
 @frappe.whitelist()
 @cache_source
+@frappe.read_only()
 def get(
 	chart_name: str | None = None,
 	chart: str | dict | None = None,

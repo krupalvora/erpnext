@@ -15,6 +15,7 @@ from erpnext import _refuse
 
 @frappe.whitelist()
 @cache_source
+@frappe.read_only()
 def get(
 	chart_name: str | None = None,
 	chart: Any = None,

@@ -11,6 +11,7 @@ from frappe.utils.dashboard import cache_source
 
 @frappe.whitelist()
 @cache_source
+@frappe.read_only()
 def get(
 	chart_name: str | None = None,
 	chart: Any | None = None,

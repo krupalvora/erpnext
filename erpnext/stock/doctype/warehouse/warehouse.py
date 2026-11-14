@@ -300,6 +300,7 @@ class Warehouse(NestedSet):
 
 
 @frappe.whitelist()
+@frappe.read_only()
 def get_children(
 	doctype: str,
 	parent: str | None = None,
